@@ -51,7 +51,7 @@ const sismoSchema = new Schema({
     magnitudes: [{
 
         magnitud: {
-            type: Number,
+            type: String,
             required: true
         },
 

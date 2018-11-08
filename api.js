@@ -58,12 +58,7 @@ function getData() {
                     };
 
                     salida.magnitudes.push(dataMagnitud);
-
-                    if (sismoController.insertSismo(salida)) {
-                        console.log('Sismo guardado correctamente');
-                    } else {
-                        console.log('Error al guardar sismo')
-                    }
+                    sismoController.insertSismo(salida);
 
                 });
 
