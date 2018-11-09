@@ -9,6 +9,8 @@ const api = require('./api');
 const app = require('./app');
 const cron = require('node-cron');
 const sismo = require('./server/model/sismo');
+
+const moment = require('moment');
 mongoose.Promise = global.Promise;
 
 mongoose.set('useCreateIndex', true);
