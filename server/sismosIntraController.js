@@ -18,6 +18,7 @@ function insertSismo(sismo) {
                 sismoGuardar.geoReferencia = sismo.geoReferencia;
                 sismoGuardar.imagen = sismo.imagen;
                 sismoGuardar.magnitudes = sismo.magnitudes;
+                sismoGuardar.localDate = sismo.localDate;
 
                 sismoGuardar.save((err, sismo_guardado) => {
                     return !err;
