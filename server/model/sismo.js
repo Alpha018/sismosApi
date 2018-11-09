@@ -48,6 +48,11 @@ const sismoSchema = new Schema({
         required: true
     },
 
+    localDate: {
+        type: Date,
+        required: true
+    },
+
     magnitudes: [{
 
         magnitud: {
