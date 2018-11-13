@@ -8,6 +8,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const app = express();
+
+app.enable("trust proxy");
 app.use(cors());
 
 app.use((req, res, next) =>{
