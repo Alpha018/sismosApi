@@ -21,7 +21,7 @@ function getSismos(req, res) {
                 const mes = format('MM', data);
                 const dia = format('dd', data);
 
-                const query = sismo.find({horaLocal: {$regex: `.* ${dia}/${mes}/${anio}`}}, {'_id': 0, 'magnitudes._id': 0, '__v': 0, 'localDate': 0}).sort({horaLocal: -1}).limit(10);
+                const query = sismo.find({horaLocal: {$regex: `.* ${dia}/${mes}/${anio}`}}, {'_id': 0, 'magnitudes._id': 0, '__v': 0, 'localDate': 0, 'magnitudes.fechaIngreso': 0}).sort({horaLocal: -1}).limit(10);
                 query.exec(function (err, sismos_encontrados) {
                     if (err) {
                         res.status(500).send({
@@ -50,7 +50,7 @@ function getSismos(req, res) {
         }
     } else {
         //buscar los ultimos 10 sismos
-        const query = sismo.find({}, {'_id': 0, 'magnitudes._id': 0, '__v': 0, 'localDate': 0}).sort({localDate: -1}).limit(10);
+        const query = sismo.find({}, {'_id': 0, 'magnitudes._id': 0, '__v': 0, 'localDate': 0, 'magnitudes.fechaIngreso': 0}).sort({localDate: -1}).limit(10);
         query.exec(function (err, sismos_encontrados) {
             if (err) {
                 res.status(500).send({
